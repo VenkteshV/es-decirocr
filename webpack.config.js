@@ -2,6 +2,7 @@
     ./webpack.config.js
 */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -10,7 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 module.exports = {
-  entry: './client/index.js',
+  entry: './client/index.jsx',
   output: {
     path: path.resolve('dist'),
     filename: 'index_bundle.js'
@@ -39,5 +40,5 @@ module.exports = {
       },
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig,new ExtractTextPlugin('bundle.css'),new webpack.LoaderOptionsPlugin({ options: {} }),]
 }

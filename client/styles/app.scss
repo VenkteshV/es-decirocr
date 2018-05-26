@@ -1,0 +1,22 @@
+body {
+  font: 100% $font-lato;
+  font-weight: 400;
+  color: $dark-gray-color;
+  letter-spacing: 0.075rem;
+}
+
+input,
+textarea,
+select,
+button {
+  letter-spacing: 0.075rem;
+}
+
+.loader {
+  width: auto;
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('../images/loader.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
